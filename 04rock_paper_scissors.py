@@ -1,6 +1,6 @@
 import random
 
-def get_user():
+def user_input():
     print("""
     1. Rock
     2. Paper
@@ -17,10 +17,10 @@ def get_user():
     elif choice == '3':
         return 'scissors'
 
-def get_computer():
+def computer_input():
     return random.choice(['rock', 'paper', 'scissors'])
 
-def determine_winner(user, computer):
+def winner_select(user, computer):
     if user == computer:
         return "tie"
     elif (user == 'rock' and computer == 'scissors') or \
@@ -46,9 +46,9 @@ def main():
     computer_score = 0
 
     while True:
-        user = get_user()
-        computer = get_computer()
-        winner = determine_winner(user, computer)
+        user = user_input()
+        computer = computer_input()
+        winner = winner_select(user, computer)
         display_result(user, computer, winner)
 
         if winner == "user":
